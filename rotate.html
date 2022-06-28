@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <style>
+            .rotate{
+                transform: rotate(0deg);
+                width:100px;
+                height: 100px;
+                margin-left:45%;
+                margin-top:18%;
+                font-size:50px;
+                }
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="rotate" class="rotate"><p>HELLO WORLD</p></div>
+        
+    
+    <script> 
+    var looper;  
+    var degrees=0;
+    function rotateAnimation(){
+    var elem = document.getElementById('rotate');
+    elem.style.transform = "rotate("+degrees+"deg)";   
+    if(degrees%5==1){
+        elem.style.color = "blue";
+    }else if(degrees%5==3){
+        elem.style.color = "pink";
+    }else if(degrees%5==0){
+        elem.style.color = "black";
+    }
+    looper = setTimeout(rotateAnimation,30);
+    degrees++;
+    if(degrees>359){
+        degrees=1;
+    }
+    }
+    rotateAnimation();
+    </script>
+    
+    </body>
+    
+    </html>
